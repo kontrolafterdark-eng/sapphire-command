@@ -52,12 +52,17 @@ export default function LuxuryDashboardSuite() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-8">
-        {activeDashboard === 'onboarding' && <StyleProfileBuilder />}
-        {activeDashboard === 'wardrobe' && <WardrobeAudit />}
-        {activeDashboard === 'event' && <EventPrepCommand />}
-        {activeDashboard === 'lookbook' && <PrivateLookbook />}
-        {activeDashboard === 'evolution' && <BrandEvolution />}
-        {activeDashboard === 'concierge' && <StyleIntelligence />}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <KPICard label="Active Projects" value="6" color="blue" />
+          <KPICard label="Total Value" value="$485K" color="amber" />
+          <KPICard label="Client Status" value="Premium" color="emerald" />
+          <KPICard label="Next Session" value="Feb 14" color="purple" />
+        </div>
+        
+        <div className="mt-8 bg-slate-800/30 border border-slate-700/50 rounded-sm p-8">
+          <h2 className="text-white text-2xl font-light mb-4">Sapphire Command Dashboard</h2>
+          <p className="text-slate-300 font-light">Luxury fashion styling & personal brand consultancy platform for ultra-high-net-worth individuals</p>
+        </div>
       </div>
     </div>
   );
@@ -69,7 +74,6 @@ function KPICard({ label, value, color }) {
     emerald: 'from-emerald-900/40 to-emerald-900/20 border-emerald-700/30 text-emerald-300',
     purple: 'from-purple-900/40 to-purple-900/20 border-purple-700/30 text-purple-300',
     amber: 'from-amber-900/40 to-amber-900/20 border-amber-700/30 text-amber-300',
-    rose: 'from-rose-900/40 to-rose-900/20 border-rose-700/30 text-rose-300',
   };
 
   return (
@@ -79,112 +83,3 @@ function KPICard({ label, value, color }) {
     </div>
   );
 }
-
-function StyleProfileBuilder() {
-  return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <KPICard label="Profile Completion" value="92%" color="emerald" />
-        <KPICard label="Brand Affinities" value="23" color="blue" />
-        <KPICard label="Pain Points" value="7" color="rose" />
-        <KPICard label="Recommendations" value="Ready" color="amber" />
-      </div>
-      <div className="bg-slate-800/30 border border-slate-700/50 rounded-sm p-6">
-        <h3 className="text-white font-light text-sm">Style Profile Builder</h3>
-        <p className="text-slate-300 mt-3">Comprehensive intake & visual identity mapping for personalized styling.</p>
-      </div>
-    </div>
-  );
-}
-
-function WardrobeAudit() {
-  return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <KPICard label="Total Pieces" value="155" color="blue" />
-        <KPICard label="Total Value" value="$355K" color="amber" />
-        <KPICard label="Completion" value="100%" color="emerald" />
-        <KPICard label="Gaps Found" value="4" color="rose" />
-      </div>
-      <div className="bg-slate-800/30 border border-slate-700/50 rounded-sm p-6">
-        <h3 className="text-white font-light text-sm">Wardrobe Audit</h3>
-        <p className="text-slate-300 mt-3">Inventory analysis & strategic gap identification for capsule expansion.</p>
-      </div>
-    </div>
-  );
-}
-
-function EventPrepCommand() {
-  return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <KPICard label="Upcoming Events" value="2" color="blue" />
-        <KPICard label="Looks Curated" value="5" color="purple" />
-        <KPICard label="Days to Event" value="66" color="amber" />
-      </div>
-      <div className="bg-slate-800/30 border border-slate-700/50 rounded-sm p-6">
-        <h3 className="text-white font-light text-sm">Event Prep Command</h3>
-        <p className="text-slate-300 mt-3">Red carpet to boardroom styling strategy with multi-look curation.</p>
-      </div>
-    </div>
-  );
-}
-
-function PrivateLookbook() {
-  return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <KPICard label="Collections" value="4" color="blue" />
-        <KPICard label="Total Looks" value="48" color="purple" />
-        <KPICard label="Protected" value="✓" color="emerald" />
-        <KPICard label="Updated" value="Feb 2026" color="slate" />
-      </div>
-      <div className="bg-slate-800/30 border border-slate-700/50 rounded-sm p-6">
-        <h3 className="text-white font-light text-sm">Private Lookbook</h3>
-        <p className="text-slate-300 mt-3">Password-protected outfit archives & styling notes for ongoing reference.</p>
-      </div>
-    </div>
-  );
-}
-
-function BrandEvolution() {
-  return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <KPICard label="Stage" value="3/5" color="blue" />
-        <KPICard label="Sentiment" value="+38%" color="emerald" />
-        <KPICard label="Mentions" value="12" color="amber" />
-        <KPICard label="Next Phase" value="Q2 2026" color="purple" />
-      </div>
-      <div className="bg-slate-800/30 border border-slate-700/50 rounded-sm p-6">
-        <h3 className="text-white font-light text-sm">Brand Evolution</h3>
-        <p className="text-slate-300 mt-3">Personal brand milestones & public sentiment analysis over time.</p>
-      </div>
-    </div>
-  );
-}
-
-function StyleIntelligence() {
-  return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <KPICard label="Status" value="Active" color="emerald" />
-        <KPICard label="Briefings" value="3" color="blue" />
-        <KPICard label="Items Curated" value="24" color="amber" />
-        <KPICard label="Member Since" value="Q2 2025" color="purple" />
-      </div>
-      <div className="bg-slate-800/30 border border-slate-700/50 rounded-sm p-6">
-        <h3 className="text-white font-light text-sm">Style Intelligence</h3>
-        <p className="text-slate-300 mt-3">Monthly trend briefings & curated recommendations for top-tier members.</p>
-      </div>
-    </div>
-  );
-}q!
-^O WriteOut
-exit
-q
-Q
-wq
-q
-:q
-
